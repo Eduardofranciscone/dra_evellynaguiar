@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Evellyn Aguiar | Rejuvenescimento Facial Avançado & Método Mescla das Musas</title>
+    <meta name="description" content="Rejuvenescimento facial avançado com abordagem natural. Conheça a Dra. Evellyn Aguiar e o Método autoral Mescla das Musas em Niterói e Barra da Tijuca.">
+    <meta name="keywords" content="Dra. Evellyn Aguiar, rejuvenescimento facial, harmonização facial, harmonização facial natural, rejuvenescimento facial Niterói, harmonização facial Niterói, rejuvenescimento facial Barra da Tijuca, harmonização facial Barra da Tijuca, bioestimulador de colágeno, preenchimento facial, Método Mescla das Musas">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dra. Evellyn Aguiar | Rejuvenescimento Facial Avançado">
+    <meta property="og:description" content="Rejuvenescer sem deixar de ser você. Planejamento individualizado para valorizar a sua beleza natural.">
+    <meta property="og:image" content="draevellynaguiar-foto.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: Cormorant Garamond for Serifs (Titles), Inter for Sans-Serif (Text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for elegant, thin icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            offwhite: '#FBF8F3',
+                            champagne: '#F3ECE3',
+                            sand: '#E7D8C7',
+                            nude: '#C9B49C',
+                            taupe: '#7B6757',
+                            coffee: '#292521',
+                            gold: '#D4AF37', // Discreto, usado apenas para os CTAs conforme solicitado
+                            goldHover: '#C5A028'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '30': '7.5rem',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for subtle animations and overrides */
+        body {
+            background-color: #FBF8F3;
+            color: #292521;
+        }
+        
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        /* Subtle Fade In Animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hide scrollbar for clean horizontal scroll if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Monogram styling */
+        .monogram {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            letter-spacing: -0.05em;
+        }
+        
+        /* Rounded corners for buttons globally */
+        .btn-rounded {
+            border-radius: 9999px; /* Fully rounded */
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-taupe selection:text-white">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-offwhite/90 backdrop-blur-md border-b border-brand-sand/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <!-- Logo / Name -->
+            <a href="#" class="font-serif text-xl tracking-widest text-brand-coffee uppercase">
+                Dra. Evellyn Aguiar
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm tracking-wide text-brand-coffee/80">
+                <a href="#sobre" class="hover:text-brand-taupe transition-colors">Sobre</a>
+                <a href="#mescla-das-musas" class="hover:text-brand-taupe transition-colors">Mescla das Musas</a>
+                <a href="#rejuvenescimento" class="hover:text-brand-taupe transition-colors">Tratamentos</a>
+                <a href="#locais" class="hover:text-brand-taupe transition-colors">Locais</a>
+                <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-6 py-2.5 hover:bg-brand-goldHover transition-colors shadow-sm btn-rounded">
+                    Agendar avaliação
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-brand-coffee p-2 focus:outline-none" aria-label="Abrir menu">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-offwhite z-40 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col justify-center items-center">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-brand-coffee p-2 focus:outline-none" aria-label="Fechar menu">
+                <i class="ph ph-x text-2xl"></i>
+            </button>
+            <nav class="flex flex-col items-center space-y-8 text-lg font-serif text-brand-coffee w-full px-6">
+                <a href="#sobre" class="mobile-link hover:text-brand-taupe transition-colors">Sobre</a>
+                <a href="#mescla-das-musas" class="mobile-link hover:text-brand-taupe transition-colors">Mescla das Musas</a>
+                <a href="#rejuvenescimento" class="mobile-link hover:text-brand-taupe transition-colors">Tratamentos</a>
+                <a href="#locais" class="mobile-link hover:text-brand-taupe transition-colors">Locais</a>
+                <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-8 py-3 mt-4 text-sm font-sans uppercase tracking-wider shadow-sm btn-rounded w-full text-center">
+                    Agendar avaliação
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden flex items-center min-h-[80vh] lg:min-h-[85vh]">
+        <!-- Decorative Background Element -->
+        <div class="absolute top-0 right-0 w-2/3 h-full bg-brand-champagne/30 -z-10 transform skew-x-12 translate-x-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+            
+            <!-- Text Content -->
+            <div class="order-2 lg:order-1 flex flex-col items-start fade-in-up mt-8 lg:mt-0">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="h-[1px] w-8 bg-brand-taupe"></span>
+                    <span class="text-xs tracking-[0.2em] uppercase text-brand-taupe font-medium">Rejuvenescimento Facial Avançado</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl lg:text-7xl leading-[1.1] text-brand-coffee mb-6 text-balance">
+                    Rejuvenescer <br>
+                    <span class="italic text-brand-taupe">sem deixar de ser você.</span>
+                </h1>
+                
+                <p class="text-lg lg:text-xl text-brand-coffee/80 mb-10 max-w-md leading-relaxed font-light">
+                    Planejamento individualizado e uma abordagem que valoriza a beleza natural da sua própria história, sem excessos.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-8 py-4 text-center text-sm font-medium tracking-wide hover:bg-brand-goldHover transition-colors shadow-sm w-full sm:w-auto btn-rounded">
+                        Agendar avaliação
+                    </a>
+                    <a href="#mescla-das-musas" class="border border-brand-taupe/30 text-brand-coffee px-8 py-4 text-center text-sm font-medium tracking-wide hover:bg-brand-taupe/5 transition-colors w-full sm:w-auto btn-rounded">
+                        Conhecer o Método
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Content -->
+            <div class="order-1 lg:order-2 relative fade-in-up h-[50vh] lg:h-auto" style="transition-delay: 200ms;">
+                <div class="aspect-[4/5] relative overflow-hidden bg-brand-champagne h-full rounded-2xl lg:rounded-none">
+                    <!-- Main Image -->
+                    <img src="./draevellynaguiar-foto-2.jpg" alt="Dra. Evellyn Aguiar - Retrato Editorial" class="object-cover w-full h-full object-top lg:object-center scale-105 hover:scale-100 transition-transform duration-1000">
+                </div>
+                <!-- Subtle floating badge -->
+                <div class="absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-10 bg-white p-6 lg:p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-brand-sand/20 rounded-xl lg:rounded-none hidden sm:block">
+                    <p class="font-serif text-xl italic text-brand-taupe mb-1">Criadora do Método</p>
+                    <p class="text-sm tracking-widest uppercase font-medium text-brand-coffee">Mescla das Musas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Micro-bloco de Autoridade -->
+    <section class="border-y border-brand-sand/30 bg-white py-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-brand-sand/50">
+                <div class="px-6 py-2 md:py-0 w-full font-serif text-lg text-brand-taupe">Cirurgiã-Dentista</div>
+                <div class="px-6 py-2 md:py-0 w-full font-serif text-lg text-brand-taupe">Harmonização Facial Avançada</div>
+                <div class="px-6 py-2 md:py-0 w-full font-serif text-lg text-brand-taupe">Capacitação Internacional</div>
+                <div class="px-6 py-2 md:py-0 w-full font-serif text-lg text-brand-taupe">Método Autoral Exclusivo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção - A Filosofia -->
+    <section class="py-24 lg:py-32 bg-brand-offwhite">
+        <div class="max-w-4xl mx-auto px-6 text-center fade-in-up">
+            <i class="ph ph-sparkle text-3xl text-brand-taupe mb-8 inline-block"></i>
+            <h2 class="font-serif text-4xl lg:text-5xl text-brand-coffee mb-8 text-balance leading-tight">
+                A beleza não precisa <br><span class="italic text-brand-taupe">apagar quem você é.</span>
+            </h2>
+            <p class="text-lg lg:text-xl text-brand-coffee/80 leading-relaxed font-light mb-12 max-w-2xl mx-auto">
+                A abordagem da Dra. Evellyn parte de um princípio simples: cada rosto possui características próprias que devem ser respeitadas. O objetivo do rejuvenescimento é valorizar, equilibrar e cuidar — não descaracterizar.
+            </p>
+            <div class="flex justify-center items-center space-x-4 lg:space-x-8 text-sm uppercase tracking-widest text-brand-coffee/60 font-medium">
+                <span>Naturalidade</span>
+                <span class="w-1 h-1 rounded-full bg-brand-taupe"></span>
+                <span>Individualidade</span>
+                <span class="w-1 h-1 rounded-full bg-brand-taupe"></span>
+                <span>Harmonia</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre a Dra. Evellyn -->
+    <section id="sobre" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="relative fade-in-up">
+                    <div class="aspect-[3/4] overflow-hidden bg-brand-sand/20 rounded-2xl lg:rounded-none">
+                        <img src="./draevellynaguiar-foto.jpg" alt="Dra. Evellyn Aguiar em Harvard" class="w-full h-full object-cover object-top filter contrast-105">
+                    </div>
+                    <!-- Decorative Lines -->
+                    <div class="absolute -top-4 -right-4 w-24 h-24 border-t border-r border-brand-taupe/30 hidden lg:block"></div>
+                    <div class="absolute -bottom-4 -left-4 w-24 h-24 border-b border-l border-brand-taupe/30 hidden lg:block"></div>
+                </div>
+
+                <div class="fade-in-up" style="transition-delay: 200ms;">
+                    <h2 class="font-serif text-4xl lg:text-5xl text-brand-coffee mb-6">Conheça a<br><span class="italic">Dra. Evellyn Aguiar</span></h2>
+                    
+                    <div class="space-y-6 text-brand-coffee/80 font-light leading-relaxed">
+                        <p>
+                            Cirurgiã-dentista com atuação dedicada à Ortodontia e à Harmonização Facial Avançada, a Dra. Evellyn concentra sua prática no rejuvenescimento facial natural e profundamente personalizado.
+                        </p>
+                        <p>
+                            Com atendimento focado na região metropolitana do Rio de Janeiro, sua trajetória é marcada por constante atualização e refinamento técnico, incluindo capacitações internacionais destacadas e formação complementar voltada à área de rejuvenescimento em Harvard.
+                        </p>
+                        <p>
+                            Sua visão sobre estética facial culminou na criação do <strong>Método Mescla das Musas</strong>, uma abordagem proprietária que entende que nenhuma pele é igual à outra, exigindo um protocolo de cuidado único.
+                        </p>
+                    </div>
+
+                    <div class="mt-10 pt-10 border-t border-brand-sand/30 flex items-center space-x-6">
+                        <div class="w-12 h-12 flex items-center justify-center bg-brand-champagne text-brand-taupe">
+                            <i class="ph ph-map-pin text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm uppercase tracking-wider text-brand-coffee font-medium">Atendimento</p>
+                            <p class="font-serif italic text-lg text-brand-taupe">Niterói & Barra da Tijuca</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Principal — Método Mescla das Musas (Redesenhada para Destaque) -->
+    <section id="mescla-das-musas" class="py-24 lg:py-32 bg-brand-coffee text-brand-offwhite relative overflow-hidden">
+        <!-- Background Elegante -->
+        <div class="absolute inset-0 z-0 opacity-20 bg-[url('draevellynaguiar-foto_3.jpg')] bg-cover bg-center bg-no-repeat bg-blend-overlay mix-blend-luminosity"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-coffee via-brand-coffee/95 to-brand-coffee z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            
+            <!-- Cabeçalho da Seção -->
+            <div class="text-center mb-20 fade-in-up">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full border border-brand-gold/30 mb-8 bg-brand-coffee/50 backdrop-blur-sm">
+                    <span class="text-brand-gold monogram text-3xl">MM</span>
+                </div>
+                <h2 class="font-serif text-5xl lg:text-7xl text-white mb-6 tracking-tight">Mescla das Musas</h2>
+                <div class="w-24 h-px bg-brand-gold/50 mx-auto mb-8"></div>
+                <p class="text-xl lg:text-2xl font-light text-brand-champagne max-w-3xl mx-auto italic leading-relaxed">
+                    "Uma assinatura de cuidado. Tratar cada pele de acordo com a sua própria história."
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                
+                <!-- Imagem Destaque (Esquerda) -->
+                <div class="lg:col-span-5 relative fade-in-up group">
+                    <div class="aspect-[3/4] overflow-hidden rounded-tr-[4rem] rounded-bl-[4rem] border border-brand-taupe/30 relative z-10">
+                        <img src="./draevellynaguiar-foto-2.jpg" alt="Dra. Evellyn Aguiar - Método Mescla das Musas" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000">
+                        <div class="absolute inset-0 bg-brand-coffee/20 group-hover:bg-transparent transition-colors duration-700"></div>
+                    </div>
+                    <!-- Elementos Decorativos Dourados -->
+                    <div class="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-brand-gold/40 rounded-tr-[4.5rem] z-0"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-brand-gold/40 rounded-bl-[4.5rem] z-0"></div>
+                </div>
+
+                <!-- Conteúdo e Pilares (Direita) -->
+                <div class="lg:col-span-7 space-y-12">
+                    
+                    <div class="font-light text-brand-champagne/80 leading-relaxed fade-in-up text-lg space-y-6">
+                        <p>
+                            Desenvolvido com exclusividade pela Dra. Evellyn, o Método foge completamente de fórmulas prontas. É uma imersão na necessidade real do seu rosto.
+                        </p>
+                        <p>
+                            Baseado em protocolos <strong>estritamente personalizados</strong>, a formulação é definida apenas após uma avaliação minuciosa. As aplicações (subcutâneas ou tópicas) entregam exatamente o que sua pele precisa para recuperar viço, firmeza e saúde.
+                        </p>
+                    </div>
+
+                    <!-- Grid de Componentes (Design Premium) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 fade-in-up" style="transition-delay: 200ms;">
+                        
+                        <div class="group flex items-start space-x-4 p-6 bg-white/5 border border-white/10 hover:border-brand-gold/50 rounded-2xl transition-all duration-300 hover:bg-white/10">
+                            <span class="font-serif text-3xl text-brand-gold group-hover:text-brand-champagne transition-colors">01</span>
+                            <div>
+                                <h3 class="text-lg font-medium text-white mb-2">Vitaminas & Antioxidantes</h3>
+                                <p class="text-sm text-brand-champagne/60 font-light">Nutrição essencial e combate aos radicais livres.</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-start space-x-4 p-6 bg-white/5 border border-white/10 hover:border-brand-gold/50 rounded-2xl transition-all duration-300 hover:bg-white/10">
+                            <span class="font-serif text-3xl text-brand-gold group-hover:text-brand-champagne transition-colors">02</span>
+                            <div>
+                                <h3 class="text-lg font-medium text-white mb-2">Minerais</h3>
+                                <p class="text-sm text-brand-champagne/60 font-light">Equilíbrio e suporte estrutural para a derme.</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-start space-x-4 p-6 bg-white/5 border border-white/10 hover:border-brand-gold/50 rounded-2xl transition-all duration-300 hover:bg-white/10">
+                            <span class="font-serif text-3xl text-brand-gold group-hover:text-brand-champagne transition-colors">03</span>
+                            <div>
+                                <h3 class="text-lg font-medium text-white mb-2">Peptídeos Específicos</h3>
+                                <p class="text-sm text-brand-champagne/60 font-light">Estímulo direcionado para regeneração e firmeza.</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-start space-x-4 p-6 bg-white/5 border border-white/10 hover:border-brand-gold/50 rounded-2xl transition-all duration-300 hover:bg-white/10">
+                            <span class="font-serif text-3xl text-brand-gold group-hover:text-brand-champagne transition-colors">04</span>
+                            <div>
+                                <h3 class="text-lg font-medium text-white mb-2">Ácido Hialurônico</h3>
+                                <p class="text-sm text-brand-champagne/60 font-light">Hidratação profunda e melhora da textura global.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- CTA Customizado para a Seção -->
+                    <div class="pt-8 fade-in-up" style="transition-delay: 300ms;">
+                        <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-brand-gold to-[#D4AF37] text-white text-sm uppercase tracking-[0.15em] font-medium hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:-translate-y-1 transition-all duration-300 btn-rounded relative overflow-hidden group">
+                            <span class="relative z-10 flex items-center">
+                                Descobrir a Minha Mescla
+                                <i class="ph ph-sparkle ml-3 text-lg group-hover:rotate-12 transition-transform"></i>
+                            </span>
+                            <!-- Shine effect on hover -->
+                            <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-[shimmer_1.5s_infinite] z-0"></div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Add keyframes for the button shimmer effect -->
+        <style>
+            @keyframes shimmer {
+                100% { transform: translateX(100%); }
+            }
+        </style>
+    </section>
+
+    <!-- Seção — Rejuvenescimento Facial Avançado -->
+    <section id="rejuvenescimento" class="py-24 lg:py-32 bg-brand-champagne/40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mb-16 fade-in-up">
+                <h2 class="font-serif text-4xl lg:text-5xl text-brand-coffee mb-6">Rejuvenescimento que respeita sua identidade.</h2>
+                <p class="text-lg text-brand-coffee/70 font-light">
+                    O planejamento envolve diferentes estratégias para melhorar a aparência e a qualidade da pele, sempre considerando as características que fazem o seu rosto ser único.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-10 shadow-sm border border-brand-sand/20 hover:border-brand-taupe/30 transition-colors fade-in-up">
+                    <span class="font-serif italic text-brand-taupe text-3xl mb-6 block">01</span>
+                    <h3 class="text-xl font-medium text-brand-coffee mb-4">Planejamento Personalizado</h3>
+                    <p class="text-brand-coffee/70 font-light leading-relaxed text-sm">
+                        Avaliação individual minuciosa para definir uma estratégia de cuidado estético compatível com as suas características estruturais e objetivos pessoais.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-10 shadow-sm border border-brand-sand/20 hover:border-brand-taupe/30 transition-colors fade-in-up" style="transition-delay: 150ms;">
+                    <span class="font-serif italic text-brand-taupe text-3xl mb-6 block">02</span>
+                    <h3 class="text-xl font-medium text-brand-coffee mb-4">Bioestimuladores</h3>
+                    <p class="text-brand-coffee/70 font-light leading-relaxed text-sm">
+                        Procedimentos injetáveis voltados ao estímulo da produção natural de colágeno, auxiliando na firmeza e no suporte da pele, quando indicados.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-10 shadow-sm border border-brand-sand/20 hover:border-brand-taupe/30 transition-colors fade-in-up" style="transition-delay: 300ms;">
+                    <span class="font-serif italic text-brand-taupe text-3xl mb-6 block">03</span>
+                    <h3 class="text-xl font-medium text-brand-coffee mb-4">Hidratação Injetável</h3>
+                    <p class="text-brand-coffee/70 font-light leading-relaxed text-sm">
+                        Utilização de recursos como o ácido hialurônico para hidratação profunda, estruturação ou preenchimento, aplicados de acordo com a real necessidade.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção — O Que Pode Ser Cuidado -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-1/2 fade-in-up">
+                <h3 class="font-serif text-3xl lg:text-4xl text-brand-coffee mb-10">Objetivos do cuidado facial</h3>
+                <ul class="space-y-6">
+                    <li class="flex items-center space-x-4 border-b border-brand-sand/30 pb-4">
+                        <i class="ph ph-check text-brand-taupe"></i>
+                        <span class="text-brand-coffee/80 font-light">Melhora na Qualidade da Pele</span>
+                    </li>
+                    <li class="flex items-center space-x-4 border-b border-brand-sand/30 pb-4">
+                        <i class="ph ph-check text-brand-taupe"></i>
+                        <span class="text-brand-coffee/80 font-light">Firmeza & Estímulo de Colágeno</span>
+                    </li>
+                    <li class="flex items-center space-x-4 border-b border-brand-sand/30 pb-4">
+                        <i class="ph ph-check text-brand-taupe"></i>
+                        <span class="text-brand-coffee/80 font-light">Hidratação Profunda</span>
+                    </li>
+                    <li class="flex items-center space-x-4 border-b border-brand-sand/30 pb-4">
+                        <i class="ph ph-check text-brand-taupe"></i>
+                        <span class="text-brand-coffee/80 font-light">Suavização de Linhas de Expressão</span>
+                    </li>
+                    <li class="flex items-center space-x-4 border-b border-brand-sand/30 pb-4">
+                        <i class="ph ph-check text-brand-taupe"></i>
+                        <span class="text-brand-coffee/80 font-light">Reposição de Perda de Volume</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <i class="ph ph-check text-brand-taupe"></i>
+                        <span class="text-brand-coffee/80 font-light">Harmonia Facial Global</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full lg:w-1/2 relative fade-in-up">
+                <!-- Placeholder elegante para imagem de conceito (pele, textura, naturalidade) -->
+                <div class="aspect-square bg-brand-champagne overflow-hidden flex items-center justify-center p-10">
+                   <div class="w-full h-full border border-brand-taupe/20 flex flex-col items-center justify-center text-brand-taupe/40 font-serif italic text-2xl text-center p-8 bg-white/50">
+                        <img src="./procedimento.jpg" alt="Procedimento Estético">
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção — Abordagem Natural -->
+    <section class="py-32 bg-brand-coffee text-brand-champagne text-center px-6">
+        <div class="max-w-4xl mx-auto fade-in-up">
+            <h2 class="font-serif text-5xl lg:text-7xl mb-8">Menos excesso. <br><span class="italic text-brand-nude">Mais você.</span></h2>
+            <p class="text-xl font-light text-brand-champagne/80 max-w-2xl mx-auto leading-relaxed">
+                A proposta da Dra. Evellyn valoriza resultados que preservem a identidade facial, evitando exageros e buscando o equilíbrio perfeito entre estrutura, proporção e a sua beleza natural.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experiência da Paciente -->
+    <section class="py-24 bg-brand-offwhite border-b border-brand-sand/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-xs uppercase tracking-widest text-brand-taupe font-medium mb-4 block">A Jornada</span>
+                <h2 class="font-serif text-4xl text-brand-coffee">Fluxo de Cuidado</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Connecting line for desktop -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-brand-sand/50 -z-10 -translate-y-12"></div>
+
+                <div class="text-center bg-white p-8 shadow-sm fade-in-up">
+                    <div class="w-12 h-12 rounded-full bg-brand-offwhite border border-brand-taupe/30 flex items-center justify-center mx-auto mb-6 text-brand-taupe font-serif text-xl">01</div>
+                    <h4 class="font-medium text-brand-coffee mb-3">Avaliação</h4>
+                    <p class="text-sm font-light text-brand-coffee/70">Compreensão de características, necessidades e objetivos.</p>
+                </div>
+
+                <div class="text-center bg-white p-8 shadow-sm fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 rounded-full bg-brand-offwhite border border-brand-taupe/30 flex items-center justify-center mx-auto mb-6 text-brand-taupe font-serif text-xl">02</div>
+                    <h4 class="font-medium text-brand-coffee mb-3">Planejamento</h4>
+                    <p class="text-sm font-light text-brand-coffee/70">Definição de uma estratégia estética totalmente personalizada.</p>
+                </div>
+
+                <div class="text-center bg-white p-8 shadow-sm fade-in-up" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 rounded-full bg-brand-offwhite border border-brand-taupe/30 flex items-center justify-center mx-auto mb-6 text-brand-taupe font-serif text-xl">03</div>
+                    <h4 class="font-medium text-brand-coffee mb-3">Protocolo</h4>
+                    <p class="text-sm font-light text-brand-coffee/70">Seleção e aplicação dos recursos adequados à avaliação prévia.</p>
+                </div>
+
+                <div class="text-center bg-white p-8 shadow-sm fade-in-up" style="transition-delay: 300ms;">
+                    <div class="w-12 h-12 rounded-full bg-brand-offwhite border border-brand-taupe/30 flex items-center justify-center mx-auto mb-6 text-brand-taupe font-serif text-xl">04</div>
+                    <h4 class="font-medium text-brand-coffee mb-3">Acompanhamento</h4>
+                    <p class="text-sm font-light text-brand-coffee/70">Orientação contínua e acompanhamento da evolução.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ortodontia (Discreta) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center border-b border-brand-sand/30 pb-16 fade-in-up">
+            <h3 class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-4 font-medium">Outras Atuações</h3>
+            <h4 class="font-serif text-3xl text-brand-coffee mb-4">Ortodontia</h4>
+            <p class="text-brand-coffee/70 font-light text-sm max-w-xl mx-auto">
+                A Ortodontia integra a trajetória profissional da Dra. Evellyn, atuando no planejamento corretivo e na harmonia funcional do sorriso, complementando a visão estética global.
+            </p>
+        </div>
+    </section>
+
+    <!-- Locais de Atendimento -->
+    <section id="locais" class="py-24 bg-brand-champagne/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center fade-in-up">
+            <h2 class="font-serif text-4xl text-brand-coffee mb-12">Onde cuidar de você</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+                <div class="bg-white p-10 border border-brand-sand/20 text-center shadow-sm rounded-2xl lg:rounded-none">
+                    <i class="ph ph-buildings text-3xl text-brand-taupe mb-4"></i>
+                    <h3 class="font-serif text-2xl text-brand-coffee mb-2">Niterói</h3>
+                    <p class="text-brand-coffee/70 font-light mb-6">Clínica Harmony Estética e Beleza Facial</p>
+                </div>
+                
+                <div class="bg-white p-10 border border-brand-sand/20 text-center shadow-sm rounded-2xl lg:rounded-none">
+                    <i class="ph ph-buildings text-3xl text-brand-taupe mb-4"></i>
+                    <h3 class="font-serif text-2xl text-brand-coffee mb-2">Barra da Tijuca</h3>
+                    <p class="text-brand-coffee/70 font-light mb-6">Complexo Vog Square — Rio de Janeiro</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-gold text-white px-8 py-4 text-sm uppercase tracking-wider font-medium hover:bg-brand-goldHover transition-colors shadow-sm btn-rounded">
+                Agendar na unidade mais próxima
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Emocional -->
+    <section class="py-32 bg-white text-center px-6">
+        <div class="max-w-3xl mx-auto fade-in-up">
+            <h2 class="font-serif text-4xl lg:text-5xl text-brand-coffee leading-tight mb-8">
+                Talvez você não queira mudar seu rosto.<br>
+                <span class="italic text-brand-taupe">Talvez queira apenas se reconhecer ainda mais nele.</span>
+            </h2>
+            <p class="text-lg text-brand-coffee/80 font-light mb-12 leading-relaxed">
+                Conheça uma abordagem de rejuvenescimento facial pensada para valorizar sua beleza, respeitar sua individualidade e construir um plano de cuidado personalizado para você.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-brand-goldHover transition-colors shadow-sm btn-rounded">
+                    Agendar avaliação
+                </a>
+                <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="border border-brand-coffee text-brand-coffee px-8 py-4 text-sm font-medium tracking-wide hover:bg-brand-coffee hover:text-white transition-colors flex items-center justify-center btn-rounded">
+                    <i class="ph ph-whatsapp mr-2 text-lg"></i> Falar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 bg-brand-offwhite">
+        <div class="max-w-3xl mx-auto px-6 lg:px-12 fade-in-up">
+            <h2 class="font-serif text-3xl text-center text-brand-coffee mb-12">Perguntas Frequentes</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border-b border-brand-sand/50 pb-4">
+                    <button class="faq-btn w-full text-left flex justify-between items-center py-4 focus:outline-none text-brand-coffee font-medium">
+                        O que é o Método Mescla das Musas?
+                        <i class="ph ph-caret-down text-brand-taupe transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <p class="pb-4 text-brand-coffee/70 font-light text-sm leading-relaxed">
+                            É uma metodologia autoral exclusiva desenvolvida pela Dra. Evellyn Aguiar, baseada na criação de protocolos estritamente personalizados de acordo com a necessidade da pele de cada pessoa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border-b border-brand-sand/50 pb-4">
+                    <button class="faq-btn w-full text-left flex justify-between items-center py-4 focus:outline-none text-brand-coffee font-medium">
+                        A harmonização facial precisa mudar completamente o rosto?
+                        <i class="ph ph-caret-down text-brand-taupe transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <p class="pb-4 text-brand-coffee/70 font-light text-sm leading-relaxed">
+                            Não. A proposta da Dra. Evellyn é focar na naturalidade e na preservação das características individuais, buscando equilibrar e suavizar sinais do tempo sem descaracterizar a fisionomia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border-b border-brand-sand/50 pb-4">
+                    <button class="faq-btn w-full text-left flex justify-between items-center py-4 focus:outline-none text-brand-coffee font-medium">
+                        O que pode fazer parte de um protocolo de rejuvenescimento?
+                        <i class="ph ph-caret-down text-brand-taupe transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <p class="pb-4 text-brand-coffee/70 font-light text-sm leading-relaxed">
+                            Os protocolos dependem exclusivamente da avaliação individual. Podem envolver diferentes estratégias integradas, incluindo bioestimuladores de colágeno, preenchimentos pontuais, hidratação injetável e outros recursos dentro da atuação profissional.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border-b border-brand-sand/50 pb-4">
+                    <button class="faq-btn w-full text-left flex justify-between items-center py-4 focus:outline-none text-brand-coffee font-medium">
+                        O que é utilizado no Método Mescla das Musas?
+                        <i class="ph ph-caret-down text-brand-taupe transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <p class="pb-4 text-brand-coffee/70 font-light text-sm leading-relaxed">
+                            A composição é sempre personalizada, mas o arsenal do método engloba o uso criterioso de vitaminas, antioxidantes, minerais, peptídeos específicos e ácido hialurônico.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="border-b border-brand-sand/50 pb-4">
+                    <button class="faq-btn w-full text-left flex justify-between items-center py-4 focus:outline-none text-brand-coffee font-medium">
+                        Onde a Dra. Evellyn atende?
+                        <i class="ph ph-caret-down text-brand-taupe transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <p class="pb-4 text-brand-coffee/70 font-light text-sm leading-relaxed">
+                            Os atendimentos são realizados em Niterói (Clínica Harmony Estética) e no Rio de Janeiro, na Barra da Tijuca (complexo Vog Square).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="py-20 bg-white text-center border-t border-brand-sand/30">
+        <div class="max-w-4xl mx-auto px-6 fade-in-up">
+            <i class="ph ph-instagram-logo text-4xl text-brand-taupe mb-6"></i>
+            <h2 class="font-serif text-3xl text-brand-coffee mb-4">Acompanhe no Instagram</h2>
+            <p class="text-brand-coffee/70 mb-8 font-light">@draevellynaguiar</p>
+            <a href="https://www.instagram.com/draevellynaguiar/" target="_blank" rel="noopener noreferrer" class="inline-block border border-brand-taupe text-brand-taupe px-8 py-3 text-sm tracking-widest uppercase hover:bg-brand-taupe hover:text-white transition-colors btn-rounded">
+                Conhecer o Perfil
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-coffee text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            
+            <div>
+                <h3 class="font-serif text-2xl uppercase tracking-widest text-brand-sand mb-4">Dra. Evellyn Aguiar</h3>
+                <p class="text-brand-champagne/60 text-sm font-light mb-2">Cirurgiã-Dentista</p>
+                <p class="text-brand-champagne/60 text-sm font-light">Rejuvenescimento Facial Avançado</p>
+            </div>
+
+            <div>
+                <h4 class="text-brand-sand font-medium mb-4 uppercase text-xs tracking-widest">Locais de Atendimento</h4>
+                <ul class="space-y-2 text-brand-champagne/60 text-sm font-light">
+                    <li>Niterói</li>
+                    <li>Barra da Tijuca, RJ</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-brand-sand font-medium mb-4 uppercase text-xs tracking-widest">Contato</h4>
+                <ul class="space-y-2 text-brand-champagne/60 text-sm font-light">
+                    <li><a href="https://wa.me/552199943103" class="hover:text-white transition-colors">(21) 9994-3103</a></li>
+                    <li><a href="https://www.instagram.com/draevellynaguiar/" target="_blank" class="hover:text-white transition-colors">@draevellynaguiar</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-champagne/40 font-light text-center md:text-left gap-4">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Dra. Evellyn Aguiar. Todos os direitos reservados.</p>
+            <p class="max-w-xl">
+                Aviso profissional: Os resultados em procedimentos estéticos e de saúde são individuais e dependem de características anatômicas e biológicas de cada paciente. As informações contidas neste site têm caráter informativo.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação pelo WhatsApp" class="fixed bottom-6 right-6 z-50 bg-brand-gold text-white p-4 rounded-full shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:scale-105 hover:bg-brand-goldHover transition-all flex items-center group">
+        <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-3 transition-all duration-300 font-medium text-sm tracking-wide">
+            Agendar avaliação
+        </span>
+    </a>
+
+    <!-- Scripts para Interatividade -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Header scroll effect
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-sm', 'bg-brand-offwhite/95');
+                    header.classList.remove('bg-brand-offwhite/90');
+                } else {
+                    header.classList.remove('shadow-sm', 'bg-brand-offwhite/95');
+                    header.classList.add('bg-brand-offwhite/90');
+                }
+            });
+
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isOpen = mobileMenu.classList.contains('translate-x-0');
+                if (isOpen) {
+                    mobileMenu.classList.remove('translate-x-0');
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = 'auto';
+                } else {
+                    mobileMenu.classList.remove('translate-x-full');
+                    mobileMenu.classList.add('translate-x-0');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            mobileBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // FAQ Accordion
+            const faqBtns = document.querySelectorAll('.faq-btn');
+            faqBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('i');
+                    
+                    // Close others
+                    faqBtns.forEach(otherBtn => {
+                        if (otherBtn !== btn) {
+                            otherBtn.nextElementSibling.style.maxHeight = null;
+                            otherBtn.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Intersection Observer for subtle animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
