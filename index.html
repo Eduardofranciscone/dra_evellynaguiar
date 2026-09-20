@@ -56,9 +56,21 @@
         }
     </script>
     <style>
+        /* Fix: trava o scroll horizontal no mobile.
+           O body já tinha overflow-x-clip (via classe Tailwind), mas isso
+           impede a propagação do overflow para o elemento <html>, que ficava
+           com overflow horizontal "visible" e permitia arrastar a página
+           para o lado no celular. */
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         /* Custom Styles for subtle animations and overrides */
         body {
             background-color: #FBF8F3;
+            overflow-x: hidden;
+            max-width: 100vw;
             color: #292521;
         }
         
