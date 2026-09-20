@@ -98,9 +98,15 @@
         .btn-rounded {
             border-radius: 9999px; /* Fully rounded */
         }
+
+        /* Menu mobile: altura correta mesmo com a barra de endereço dinâmica do navegador */
+        #mobile-menu {
+            height: 100vh;
+            height: 100dvh;
+        }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-brand-taupe selection:text-white">
+<body class="font-sans antialiased selection:bg-brand-taupe selection:text-white overflow-x-clip w-full relative">
 
     <!-- Header -->
     <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-offwhite/90 backdrop-blur-md border-b border-brand-sand/30">
@@ -111,38 +117,43 @@
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center space-x-8 text-sm tracking-wide text-brand-coffee/80">
+            <nav class="hidden lg:flex items-center space-x-6 text-sm tracking-wide text-brand-coffee/80">
                 <a href="#sobre" class="hover:text-brand-taupe transition-colors">Sobre</a>
-                <a href="#mescla-das-musas" class="hover:text-brand-taupe transition-colors">Mescla das Musas</a>
+                <a href="#mescla-das-musas" class="hover:text-brand-taupe transition-colors">Método</a>
                 <a href="#rejuvenescimento" class="hover:text-brand-taupe transition-colors">Tratamentos</a>
                 <a href="#locais" class="hover:text-brand-taupe transition-colors">Locais</a>
-                <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-6 py-2.5 hover:bg-brand-goldHover transition-colors shadow-sm btn-rounded">
+                <a href="#faq" class="hover:text-brand-taupe transition-colors">FAQ</a>
+                <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-6 py-2.5 hover:bg-brand-goldHover transition-colors shadow-sm btn-rounded ml-2">
                     Agendar avaliação
                 </a>
             </nav>
 
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="lg:hidden text-brand-coffee p-2 focus:outline-none" aria-label="Abrir menu">
-                <i class="ph ph-list text-2xl"></i>
+                <i class="ph ph-list text-3xl"></i>
             </button>
-        </div>
-
-        <!-- Mobile Nav Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 bg-brand-offwhite z-40 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col justify-center items-center">
-            <button id="close-menu-btn" class="absolute top-6 right-6 text-brand-coffee p-2 focus:outline-none" aria-label="Fechar menu">
-                <i class="ph ph-x text-2xl"></i>
-            </button>
-            <nav class="flex flex-col items-center space-y-8 text-lg font-serif text-brand-coffee w-full px-6">
-                <a href="#sobre" class="mobile-link hover:text-brand-taupe transition-colors">Sobre</a>
-                <a href="#mescla-das-musas" class="mobile-link hover:text-brand-taupe transition-colors">Mescla das Musas</a>
-                <a href="#rejuvenescimento" class="mobile-link hover:text-brand-taupe transition-colors">Tratamentos</a>
-                <a href="#locais" class="mobile-link hover:text-brand-taupe transition-colors">Locais</a>
-                <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-8 py-3 mt-4 text-sm font-sans uppercase tracking-wider shadow-sm btn-rounded w-full text-center">
-                    Agendar avaliação
-                </a>
-            </nav>
         </div>
     </header>
+
+    <!-- Mobile Nav Overlay (fora do header para não herdar o containing block do backdrop-blur) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-offwhite z-[100] transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col justify-start items-center overflow-y-auto">
+        <div class="w-full flex justify-end p-6">
+            <button id="close-menu-btn" class="text-brand-coffee p-2 focus:outline-none" aria-label="Fechar menu">
+                <i class="ph ph-x text-3xl"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center space-y-6 text-xl font-serif text-brand-coffee w-full px-6 pb-20">
+            <a href="#" class="mobile-link hover:text-brand-taupe transition-colors">Início</a>
+            <a href="#sobre" class="mobile-link hover:text-brand-taupe transition-colors">Sobre</a>
+            <a href="#mescla-das-musas" class="mobile-link hover:text-brand-taupe transition-colors">Mescla das Musas</a>
+            <a href="#rejuvenescimento" class="mobile-link hover:text-brand-taupe transition-colors">Tratamentos</a>
+            <a href="#locais" class="mobile-link hover:text-brand-taupe transition-colors">Locais</a>
+            <a href="#faq" class="mobile-link hover:text-brand-taupe transition-colors">FAQ</a>
+            <a href="https://wa.me/552199943103" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-8 py-4 mt-8 text-sm font-sans uppercase tracking-wider shadow-sm btn-rounded w-full text-center">
+                Agendar avaliação
+            </a>
+        </nav>
+    </div>
 
     <!-- Hero Section -->
     <section class="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden flex items-center min-h-[80vh] lg:min-h-[85vh]">
@@ -181,7 +192,7 @@
             <div class="order-1 lg:order-2 relative fade-in-up h-[50vh] lg:h-auto" style="transition-delay: 200ms;">
                 <div class="aspect-[4/5] relative overflow-hidden bg-brand-champagne h-full rounded-2xl lg:rounded-none">
                     <!-- Main Image -->
-                    <img src="./draevellynaguiar-foto-2.jpg" alt="Dra. Evellyn Aguiar - Retrato Editorial" class="object-cover w-full h-full object-top lg:object-center scale-105 hover:scale-100 transition-transform duration-1000">
+                    <img src="./draevellynaguiar-foto.jpg" alt="Dra. Evellyn Aguiar - Retrato Editorial" class="object-cover w-full h-full object-top lg:object-center scale-105 hover:scale-100 transition-transform duration-1000">
                 </div>
                 <!-- Subtle floating badge -->
                 <div class="absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-10 bg-white p-6 lg:p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-brand-sand/20 rounded-xl lg:rounded-none hidden sm:block">
@@ -231,7 +242,7 @@
                 
                 <div class="relative fade-in-up">
                     <div class="aspect-[3/4] overflow-hidden bg-brand-sand/20 rounded-2xl lg:rounded-none">
-                        <img src="./draevellynaguiar-foto.jpg" alt="Dra. Evellyn Aguiar em Harvard" class="w-full h-full object-cover object-top filter contrast-105">
+                        <img src="./draevellynaguiar-foto-2.jpg" alt="Dra. Evellyn Aguiar em Harvard" class="w-full h-full object-cover object-top filter contrast-105">
                     </div>
                     <!-- Decorative Lines -->
                     <div class="absolute -top-4 -right-4 w-24 h-24 border-t border-r border-brand-taupe/30 hidden lg:block"></div>
@@ -271,7 +282,7 @@
     <!-- Seção Principal — Método Mescla das Musas (Redesenhada para Destaque) -->
     <section id="mescla-das-musas" class="py-24 lg:py-32 bg-brand-coffee text-brand-offwhite relative overflow-hidden">
         <!-- Background Elegante -->
-        <div class="absolute inset-0 z-0 opacity-20 bg-[url('draevellynaguiar-foto_3.jpg')] bg-cover bg-center bg-no-repeat bg-blend-overlay mix-blend-luminosity"></div>
+        <div class="absolute inset-0 z-0 opacity-20 bg-[url('draevellynaguiar-foto-2.jpg')] bg-cover bg-center bg-no-repeat bg-blend-overlay mix-blend-luminosity"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-brand-coffee via-brand-coffee/95 to-brand-coffee z-0"></div>
         
         <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -293,7 +304,7 @@
                 <!-- Imagem Destaque (Esquerda) -->
                 <div class="lg:col-span-5 relative fade-in-up group">
                     <div class="aspect-[3/4] overflow-hidden rounded-tr-[4rem] rounded-bl-[4rem] border border-brand-taupe/30 relative z-10">
-                        <img src="./draevellynaguiar-foto-2.jpg" alt="Dra. Evellyn Aguiar - Método Mescla das Musas" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000">
+                        <img src="./draevellynaguiar-foto.jpg" alt="Dra. Evellyn Aguiar - Método Mescla das Musas" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000">
                         <div class="absolute inset-0 bg-brand-coffee/20 group-hover:bg-transparent transition-colors duration-700"></div>
                     </div>
                     <!-- Elementos Decorativos Dourados -->
@@ -450,7 +461,7 @@
                 <!-- Placeholder elegante para imagem de conceito (pele, textura, naturalidade) -->
                 <div class="aspect-square bg-brand-champagne overflow-hidden flex items-center justify-center p-10">
                    <div class="w-full h-full border border-brand-taupe/20 flex flex-col items-center justify-center text-brand-taupe/40 font-serif italic text-2xl text-center p-8 bg-white/50">
-                        <img src="./procedimento.jpg" alt="Procedimento Estético">
+                        <img src="./procedimento.jpg" alt="Conceito de Cuidado Facial"">
                    </div>
                 </div>
             </div>
@@ -565,7 +576,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="py-24 bg-brand-offwhite">
+    <section id="faq" class="py-24 bg-brand-offwhite">
         <div class="max-w-3xl mx-auto px-6 lg:px-12 fade-in-up">
             <h2 class="font-serif text-3xl text-center text-brand-coffee mb-12">Perguntas Frequentes</h2>
             
